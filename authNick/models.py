@@ -1,7 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from polls.models import Question
 
-# Create your models here.
-class Users(models.Model):
-    username = models.CharField(max_length=20)
-    password = models.CharField(max_length=20,null=True,blank=True)
+class Users(AbstractUser):  # ✅ ПРАВИЛЬНО
+    current_question = models.ForeignKey(Question, on_delete=models.SET_NULL, null=True, blank=True)

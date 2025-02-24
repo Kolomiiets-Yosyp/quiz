@@ -112,6 +112,7 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+AUTH_USER_MODEL = "authNick.Users"
 
 
 # Static files (CSS, JavaScript, Images)
